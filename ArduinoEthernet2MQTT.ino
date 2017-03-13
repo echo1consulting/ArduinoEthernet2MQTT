@@ -50,9 +50,9 @@ boolean reconnect() {
   Serial.print("Initializing MQTT connection...");
   if (client.connect("arduinoClient")) {
     Serial.println("Connected to MQTT Broker...");
-    client.publish("outTopic", "Hello World");
+    client.publish("ProjectX/BuildingX/SensorX/UnitX", "Hello World");
     Serial.println("Successfully published to topic...");
-    if (client.subscribe("inTopic")) {
+    if (client.subscribe("ProjectY/BuildingY/SensorY/UnitY")) {
       Serial.println("Successfully subscribed to topic...");
     } else {
       Serial.println("Failed to subscribe to topic...");
@@ -129,6 +129,10 @@ void loop() {
       }
     }
   } else {
+
+    /**
+       Code Here
+    */
 
     client.loop();
 
